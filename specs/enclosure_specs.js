@@ -22,4 +22,10 @@ describe('Enclosure', function(){
     assert.strictEqual(0, enclosure.dinosaurs.length);
   })
 
+  it('can add dinosaurs', function(){
+    enclosure.addDinosaur(trex1);
+    enclosure.addDinosaur(velociraptor);
+    assert.strictEqual(2, enclosure.dinosaurs.length);
+  })
+
 })
