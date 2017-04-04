@@ -28,4 +28,12 @@ describe('Enclosure', function(){
     assert.strictEqual(2, enclosure.dinosaurs.length);
   })
 
+  it('can remove all dinosaurs of a type', function(){
+    enclosure.addDinosaur(trex1);
+    enclosure.addDinosaur(trex2);
+    enclosure.addDinosaur(velociraptor);
+    enclosure.removeType("T-Rex");
+    assert.strictEqual(1, enclosure.dinosaurs.length);
+  })
+
 })
