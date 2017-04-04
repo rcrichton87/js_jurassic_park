@@ -35,18 +35,22 @@ Enclosure.prototype = {
 
   numberOfDinosaursAfterYears: function(years){
     var breedingDinosaurs = [];
-    for(var i = 0; i < this.dinosaurs.length; i++){
-      breedingDinosaurs.push(this.dinosaurs[i]);
-    }
+    
+    for(var y = 0; y < years; y++){
 
-    for(var i = 0; i < breedingDinosaurs.length; i++){
-      var breedingDinosaur = breedingDinosaurs[i];
-      for(var eggs = 0; eggs < breedingDinosaur.childrenPerYear; eggs++){
-        var babyDinosaur = new Dinosaur(breedingDinosaur.type, breedingDinosaur.childrenPerYear);
-        this.dinosaurs.push(babyDinosaur);
+      for(var i = 0; i < this.dinosaurs.length; i++){
+        breedingDinosaurs.push(this.dinosaurs[i]);
       }
+
+      for(var i = 0; i < breedingDinosaurs.length; i++){
+        var breedingDinosaur = breedingDinosaurs[i];
+        for(var eggs = 0; eggs < breedingDinosaur.childrenPerYear; eggs++){
+          var babyDinosaur = new Dinosaur(breedingDinosaur.type, breedingDinosaur.childrenPerYear);
+          this.dinosaurs.push(babyDinosaur);
+        }
+      }
+      return this.dinosaurs;
     }
-    return this.dinosaurs;
   }
 }
 
