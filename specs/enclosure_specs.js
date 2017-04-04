@@ -53,4 +53,10 @@ describe('Enclosure', function(){
     assert(16, enclosure.numberOfDinosaursAfterYears(2) );
   })
 
+  it('can work out how many dinosaurs after two years, starting with two dinosaurs', function(){
+    enclosure.addDinosaur(stegosaurus);
+    enclosure.addDinosaur(trex1);
+    assert(20, enclosure.numberOfDinosaursAfterYears(2) );
+  })
+
 })
