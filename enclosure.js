@@ -19,6 +19,16 @@ Enclosure.prototype = {
       var indexToRemove = dinosaursToRemove[i];
       this.dinosaurs.splice(indexToRemove, 1);
     }
+  },
+
+  getFastBreedingDinosaurs: function(){
+    var fastBreedingDinosaurs = [];
+    for(var i = 0; i < this.dinosaurs.length; i++){
+      if(this.dinosaurs[i].childrenPerYear > 2){
+        fastBreedingDinosaurs.push(this.dinosaurs[i]);
+      }
+    }
+    return fastBreedingDinosaurs;
   }
 
 }

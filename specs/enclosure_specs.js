@@ -36,4 +36,11 @@ describe('Enclosure', function(){
     assert.strictEqual(1, enclosure.dinosaurs.length);
   })
 
+  it('can get all dinosaurs with offspring count > 2', function(){
+    enclosure.addDinosaur(trex1);
+    enclosure.addDinosaur(velociraptor);
+    enclosure.addDinosaur(stegosaurus);
+    assert.strictEqual(2, enclosure.getFastBreedingDinosaurs().length);
+  })
+
 })
