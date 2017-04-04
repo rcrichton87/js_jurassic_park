@@ -43,4 +43,9 @@ describe('Enclosure', function(){
     assert.strictEqual(2, enclosure.getFastBreedingDinosaurs().length);
   })
 
+  it('can work out how many dinosaurs after a year, starting with one', function(){
+    enclosure.addDinosaur(stegosaurus);
+    assert(4, enclosure.numberOfDinosaursAfterYears(1) );
+  })
+
 })

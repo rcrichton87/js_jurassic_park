@@ -1,3 +1,5 @@
+var Dinosaur = require('./dinosaur.js');
+
 var Enclosure = function(){
   this.dinosaurs = [];
 }
@@ -29,8 +31,23 @@ Enclosure.prototype = {
       }
     }
     return fastBreedingDinosaurs;
-  }
+  },
 
+  numberOfDinosaursAfterYears: function(years){
+    var breedingDinosaurs = [];
+    for(var i = 0; i < this.dinosaurs.length; i++){
+      breedingDinosaurs.push(this.dinosaurs[i]);
+    }
+
+    for(var i = 0; i < breedingDinosaurs.length; i++){
+      var breedingDinosaur = breedingDinosaurs[i];
+      for(var eggs = 0; eggs < breedingDinosaur.childrenPerYear; eggs++){
+        var babyDinosaur = new Dinosaur(breedingDinosaur.type, breedingDinosaur.childrenPerYear);
+        this.dinosaurs.push(babyDinosaur);
+      }
+    }
+    return this.dinosaurs;
+  }
 }
 
 module.exports = Enclosure;
